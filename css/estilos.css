@@ -1,0 +1,568 @@
+/* ==== Reset ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ==== General ==== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background: #f8f8f8;
+    line-height: 1.6;
+}
+
+/* ==== Header ==== */
+header {
+    background: #1e1e1e;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc44;
+}
+
+/* ======= Sección de intro   */
+
+.intro {
+    text-align: center;
+}
+
+/* ==== Hero Section ==== */
+.hero {
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background: url('../img/slide1.png') center/cover no-repeat;
+    color: white;
+    animation: fadeIn 1.5s;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.btn {
+    background: #ffcc44;
+    margin-top: 25px;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: black;
+    transition: .3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* ==== Slider ==== */
+.slider {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+}
+
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.fade {
+    animation: fade 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ==== Botones del slider ==== */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 0 5px 5px 0;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.next {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* Contenedor de los dots dentro del slider */
+.dots {
+    position: absolute;
+    bottom: 15px;          /* los baja dentro de la imagen */
+    width: 100%;
+    text-align: center;
+    z-index: 10;           /* asegurar que queden por encima */
+}
+
+/* Cada dot */
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: rgba(255, 255, 255, 0.6); /* circulos claros */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+/* Dot activo */
+.active-dot {
+    background-color: white; /* más fuerte */
+}
+/* ==== Sections ==== */
+section {
+    padding: 50px 30px;
+    background: white;
+    margin-top: 20px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ==== Galería ==== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);
+}
+
+
+/* ==== FORM CONTAINER ==== */
+.form-container {
+    max-width: 550px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+
+#contactForm {
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+}
+
+#formMessage {
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#formMessage.success {
+    background: #e5ffe5;
+    color: #228822;
+}
+
+#formMessage.error {
+    background: #ffe5e5;
+    color: #cc3333;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ==== INPUT GROUP (Etiquetas flotantes) ==== */
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    background: none;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #777;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/* ==== EFECTO flotante ==== */
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label,
+.input-group textarea:not(:placeholder-shown) + label {
+    top: 0;
+    left: 10px;
+    font-size: 12px;
+    color: #333;
+    background: #fff;
+    padding: 0 4px;
+}
+
+/* ==== INPUT FOCUS ==== */
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #ffcc44;
+    box-shadow: 0 0 5px rgba(255,204,68,0.6);
+}
+
+/* ==== Submit Button ==== */
+.btn-enviar {
+    padding: 14px;
+    width: 100%;
+    background: #ffcc44;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-enviar:hover {
+    background: #e6b832;
+}
+
+input,
+textarea {
+    font-family: inherit;  /* Usa la misma fuente que el contenedor */
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 480px) {
+    .form-container {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+
+/* ==== Footer ==== */
+footer {
+    background: #1b1b1b;
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 10px;
+    color: #f0b44c; /* Un color llamativo */
+}
+
+.footer-section p,
+.footer-section a {
+    color: #ddd;
+    font-size: 15px;
+}
+
+.footer-section i {
+    color: white;
+    margin-right: 8px;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.social-icon i {
+    font-size: 24px;
+    color: white;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.social-icon i:hover {
+    color: #f0b44c; /* O cualquier color que prefieras para hover */
+}
+
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+}
+
+.whatsapp-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    z-index: 999;
+}
+
+.whatsapp-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.4));
+    transition: transform 0.2s;
+}
+
+.whatsapp-btn:hover img {
+    transform: scale(1.1);
+}
+
+/* Tooltip */
+.whatsapp-tooltip {
+    position: absolute;
+    right: 80px;
+    bottom: 15px;
+    background: #25d366;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(5px);
+    transition: 0.2s ease;
+    pointer-events: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* Flechita del tooltip */
+.whatsapp-tooltip::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 8px solid #25d366;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+.whatsapp-btn:hover .whatsapp-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Relación 2:1 → 900x450 */
+.map-container::before {
+    content: "";
+    display: block;
+    padding-top: 50%; /* 450 / 900 = 0.5 → 50% */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ===== Servicios ===== */
+.servicios {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.servicios h1 {
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+.servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.servicio-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.servicio-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.servicio-card p {
+    font-size: 15px;
+    color: #555;
+}
+
+/*=========logo=============*/
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
