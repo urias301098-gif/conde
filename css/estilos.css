@@ -623,26 +623,79 @@ footer {
 
 .servicio-card {
     background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform .3s ease, box-shadow .3s ease;
+    padding: 30px 25px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: all .35s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .servicio-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-.servicio-card h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #444;
+.servicio-card h3{
+font-size:20px;
+margin-bottom:10px;
 }
 
-.servicio-card p {
-    font-size: 15px;
-    color: #555;
+.servicio-card p{
+font-size:15px;
+line-height:1.6;
+}
+
+.servicio-card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:0;
+height:3px;
+background:#d4a437;
+transition:width .35s ease;
+}
+
+.servicio-card:hover::before{
+width:100%;
+}
+
+.servicio-card i{
+font-size:30px;
+color:#d4a437;
+margin-bottom:15px;
+display:block;
+}
+
+.servicios-container{
+display:grid;
+grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+gap:25px;
+}
+
+@media (max-width:768px){
+
+.servicio-card{
+padding:25px 20px;
+}
+
+.servicio-card h3{
+font-size:18px;
+}
+
+.servicio-card p{
+font-size:14px;
+}
+
+}
+
+@media (max-width:768px){
+
+.servicio-card i{
+font-size:26px;
+}
+
 }
 
 /*=========logo=============*/
