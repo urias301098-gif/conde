@@ -160,6 +160,7 @@ font-size:clamp(32px,6vw,60px); /*define un tamaño de fuente responsivo y fluid
   En pantallas grandes → no pasa de 60px*/
 letter-spacing:2px; /*aumenta el espacio entre los caracteres*/
 text-shadow:0 6px 25px rgba(0,0,0,0.8); /* aplica una sombra difusa y oscura debajo del texto*/
+line-height: 1.2; /*Separación entre líneas*/
 }
 
 /* animación de entrada */
